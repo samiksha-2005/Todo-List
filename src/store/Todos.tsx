@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 export type TodosProviderProps = {
    children: ReactNode
@@ -13,6 +13,8 @@ export type Todo = {
 export type TodosContext = {
     todos: Todo[];
     handleAddTodo: (task: string) => void;
+    toggleTodoAsCompleted: (id: string) => void;
+    handleDeleteTodo: (id: string) => void;
 }
 export const todosContext = createContext<TodosContext | null>(null)
 
@@ -31,11 +33,45 @@ export const TodosProvider = ({children}: TodosProviderProps) => {
             },
             ...prev
         ]
+        // console.log("my prev" + prev);
+        
+        // console.log(newTodos);
+        
         return newTodos
        })
     }
 
-   return <todosContext.Provider value={{todos, handleAddTodo}}>
+    //mark completed
+    const toggleTodoAsCompleted = (id: string) => {
+        setTodos((prev) => {
+           let newTodos = prev.map((todo) => {
+             if(todo.id === id){
+                return{... todo, completed: !todo.completed}
+             }
+             return todo;
+           })
+           return newTodos
+        })
+    }
+
+    //delete the indivisual data
+    const handleDeleteTodo = (id: string) => {
+        setTodos((prev) => {
+          let newTodos = prev.filter((filterTodo) => filterTodo.id !== id);
+          return newTodos;
+        })
+    }
+
+   return <todosContext.Provider value={{todos, handleAddTodo, toggleTodoAsCompleted, handleDeleteTodo}}>
     {children}
    </todosContext.Provider>
+}
+
+//consumer 
+export const useTodos = () => {
+    const todosConsumer = useContext(todosContext);
+    if(!todosConsumer){
+        throw new Error("useTodos used outside of Provider");
+    }
+    return todosConsumer;
 }
