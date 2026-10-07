@@ -1,111 +1,188 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+html {
+    font-size: 62.5%;
 }
 
 body {
-  margin: 0;
+    background-color: #f5f6fa;
+    color: #222;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+a {
+    text-decoration: none;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+li {
+    list-style: none;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* =========================
+   MAIN
+========================= */
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+main h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
 }
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 0.1rem solid #ddd;
+    margin-bottom: 2.5rem;
+}
+
+nav a {
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #777;
+    border-bottom: 0.3rem solid transparent;
+}
+
+nav a:hover {
+    color: #222;
+}
+
+nav a.active {
+    color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+form input {
+    width: 38rem;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    font-family: 'Urbanist', sans-serif;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.6rem;
+    outline: none;
+    background-color: white;
+}
+
+form input:focus {
+    border-color: #4f46e5;
+}
+
+form button {
+    margin-left: 1rem;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: #4f46e5;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4338ca;
+}
+
+/* =========================
+   TODO LIST
+========================= */
+
+.main-task {
+    width: 50rem;
+    padding: 0;
+    background-color: white;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.main-task li {
+    min-height: 5.5rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr 7rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    border-bottom: 0.1rem solid #eee;
+}
+
+.main-task li:last-child {
+    border-bottom: none;
+}
+
+.main-task li:hover {
+    background-color: #fafafa;
+}
+
+/* Checkbox */
+
+.main-task li input[type="checkbox"] {
+    width: 1.7rem;
+    height: 1.7rem;
+    cursor: pointer;
+}
+
+/* Task */
+
+.main-task li label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+.main-task li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Delete button */
+
+.main-task li button {
+    width: 6.5rem;
+    padding: 0.7rem 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ef4444;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.main-task li button:hover {
+    background-color: #dc2626;
+}
+
