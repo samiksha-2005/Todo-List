@@ -12,7 +12,7 @@ A modern, fully-featured Todo List application built with **React**, **TypeScrip
 
 ## 📚 Repository
 
-[GitHub Repository](YOUR_GITHUB_REPOSITORY_LINK)
+[GitHub Repository](https://github.com/samiksha-2005/Todo-List)
 
 ---
 
@@ -81,8 +81,8 @@ src/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/todo-react-typescript.git
-cd todo-react-typescript
+git clone https://github.com/samiksha-2005/Todo-List
+cd Todo-List
 ```
 
 2. **Install dependencies**
