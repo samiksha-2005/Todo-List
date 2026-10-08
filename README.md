@@ -1,75 +1,179 @@
-# React + TypeScript + Vite
+# 📝 Todo React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.0+-61DAFB?logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript)](https://www.typescriptlang.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Currently, two official plugins are available:
+A modern, fully-featured Todo List application built with **React**, **TypeScript**, and **React Router**. This project demonstrates best practices in state management, data persistence, and responsive UI design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Live Demo
 
-## React Compiler
+[View Live Demo](YOUR_LIVE_DEMO_LINK)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📚 Repository
 
-## Expanding the ESLint configuration
+[GitHub Repository](YOUR_GITHUB_REPOSITORY_LINK)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ✅ **Create Todos** - Easily add new todos with a clean interface
+- ☑️ **Mark as Complete** - Toggle todo completion status
+- 🗑️ **Delete Todos** - Remove completed tasks
+- 🔍 **Smart Filtering** - Filter by:
+  - All todos
+  - Active todos
+  - Completed todos
+- 💾 **Data Persistence** - Automatic localStorage integration
+- 🎨 **Responsive Design** - Works seamlessly on all devices
+- ⚡ **Type-Safe** - Full TypeScript support for reliable code
+- 🏗️ **Context API** - Centralized state management
+- 🔗 **URL-Based Routing** - Filter state reflected in URL
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+| Technology | Purpose |
+|-----------|---------|
+| **React 18+** | UI Framework |
+| **TypeScript** | Type Safety |
+| **React Router DOM** | Client-side Routing |
+| **Context API** | State Management |
+| **Vite** | Build Tool |
+| **CSS3** | Styling |
+| **LocalStorage API** | Data Persistence |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
 
 ```
+src/
+├── components/
+│   ├── AddToDo.tsx          # Add new todo form
+│   ├── Navbar.tsx           # Navigation & filtering
+│   └── Todos.tsx            # Todo list display
+│
+├── store/
+│   ├── TodosContext.ts      # Context type definitions
+│   └── TodosProvider.tsx    # Context provider & logic
+│
+├── types/
+│   └── index.ts             # TypeScript type definitions
+│
+├── App.tsx                  # Main app component
+├── main.tsx                 # Entry point
+└── index.css                # Global styles
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/todo-react-typescript.git
+cd todo-react-typescript
+```
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Start the development server**
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. **Open in browser**
+Navigate to `http://localhost:5173` (Vite default)
+
+---
+
+## 📦 Available Scripts
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint code (if configured)
+npm run lint
+```
+
+---
+
+## 🎨 Usage
+
+1. **Add a Todo** - Type in the input field and press Enter or click Add
+2. **Complete a Todo** - Click the checkbox to mark as complete
+3. **Delete a Todo** - Click the delete button on completed todos
+4. **Filter Todos** - Use navigation links to filter by status (All/Active/Completed)
+
+---
+
+## 🔑 Key Features Explained
+
+### State Management
+Uses React Context API for global state management, avoiding prop drilling and maintaining clean component hierarchy.
+
+### Data Persistence
+All todos are automatically saved to browser's `localStorage`, ensuring data persistence across sessions.
+
+### URL-Based Filtering
+Filter state is reflected in the URL using React Router, enabling bookmarkable filter states and browser navigation.
+
+### Type Safety
+Full TypeScript implementation ensures compile-time type checking and better developer experience.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- [React Documentation](https://react.dev)
+- [TypeScript Documentation](https://www.typescriptlang.org)
+- [React Router Documentation](https://reactrouter.com)
+- [Vite Documentation](https://vitejs.dev)
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, please consider giving it a star!
