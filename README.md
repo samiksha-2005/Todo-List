@@ -81,7 +81,7 @@ src/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/todo-react-typescript.git
+git clone [https://github.com/yourusername/todo-react-typescript.git](https://github.com/samiksha-2005/Todo-List)
 cd todo-react-typescript
 ```
 
